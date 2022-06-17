@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../Source/calculator.css" />
+<title>Aminoglycoside Clearance Estimate</title>
+</head>
+
+<body>
+<div id="title">Aminoglycoside Clearance Estimate</div>
+<div id="info"><img width="30px" alt="Info" src="../../scripts/info.png" /></div>
+<table id="input" border="1" cellspacing="0" cellpadding="6px" width="100%">
+<tr  class='CHOICE'>
+	<td class='label'>Gender</td>
+	<td width='65%'>
+	<input  type='hidden'  id='gender' name='gender' value='' />
+	<span  class='choices ' default=''>
+		<span  value=Male>Male</span>
+		<span  value=Female>Female</span>
+	</span>
+	</td>
+</tr>
+<tr  class='FLOAT'>
+	<td class='label'>Age in years</td>
+	<td width='65%'>
+	<input  type='number'  id='Age' name='Age' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='FLOAT'>
+	<td class='label'>Serum Creatinine</td>
+	<td width='65%'>
+	<input  type='number'  id='SC' name='SC' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label unit'>unit</td>
+	<td width='65%'>
+	<input  type='hidden'  id='SCunit' name='SCunit' value='' />
+	<span  class='choices ' default=''>
+		<span  class='unit' value=&#181;mol/L>&#181;mol/L</span>
+		<span  class='unit' value=mg/dL>mg/dL</span>
+	</span>
+	</td>
+</tr>
+<tr  class='FLOAT'>
+	<td class='label'>Height</td>
+	<td width='65%'>
+	<input  type='number'  id='height' name='height' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label unit'>unit</td>
+	<td width='65%'>
+	<input  type='hidden'  id='htunit' name='htunit' value='cm' />
+	<span  class='choices units=SI' default='cm'>
+		<span  class='unit' value=inches>Inches</span>
+		<span  class='unit' value=cm>cm</span>
+	</span>
+	</td>
+</tr>
+<tr  class='FLOAT'>
+	<td class='label'>Weight</td>
+	<td width='65%'>
+	<input  type='number'  id='wt' name='wt' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label unit'>unit</td>
+	<td width='65%'>
+	<input  type='hidden'  id='wtunit' name='wtunit' value='kg' />
+	<span  class='choices units=SI' default='kg'>
+		<span  class='unit' value=lbs>lbs</span>
+		<span  class='unit' value=kg>kgs</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Is patient obese</td>
+	<td width='65%'>
+	<input  type='hidden'  id='Obese' name='Obese' value='' />
+	<span  class='choices ' default=''>
+		<span  value=Yes>Yes</span>
+		<span  value=No>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+</table>
+<div id='results'>
+<h5 id='resultsTitle'>R e s u l t s</h5>
+<div class='READONLY'>
+	<span class='label'>---</span><br/>
+<span  class='value' id='TestReadonly'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>AmCl</span><br/>
+<span  class='value' id='res'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>-</span><br/>
+<span  class='value' id='Null'>&nbsp;</span>
+</div>
+</div>
+<div id="calculate">Show Results</div>
+<div id="comment">
+<div id="cancel"><img width="24px" alt="Info" src="../../../scripts/cancel.png" /></div>
+<div id="title">Aminoglycoside Clearance Estimate</div>
+<div id="commentText"><comment>
+  <p>
+Elimination of aminoglycosides is almost entirely by renal excretion. Since aminoglycoside clearance corresponds to creatinine clearance over a wide range of renal function, aminoglycoside clearance can be calculated using formulas for estimating creatinine clearance.
+  </p>
+  <p>
+The method of Sarrubi and Hull utilizes serum creatinine (Scr), lean body weight (LBW), age, and gender to estimate creatinine clearance. This method considers more patient variables, which may improve the estimation of aminoglycoside elimination.
+  </p>
+  <p>
+Aminoglycoside Clearance is clinically useful in determining dosage interval for dosing of aminoglycosides such as gentamicin, amikacin or tobramycin (may also apply for vancomycin).
+  </p>
+  <p>
+The formula used aminoglycoside clearance (AmCl):
+  </p>
+  <ul>
+    <li>
+AmCl = (Gender)*((140 - Age) &#215; LBW / (Scr &#215; 72))
+    </li>
+    <li>
+AmCl = Aminoglycoside clearance in ml/min
+    </li>
+    <li>
+Gender: Male = 1, Female = 0.85
+    </li>
+    <li>
+Age = Age in years
+    </li>
+    <li>
+LBW = Lean body weight
+    </li>
+    <li>
+Scr = Serum creatinine in mg/dl
+    </li>
+  </ul>
+  <p>
+Note: This formula is for patients with stable renal function ONLY.
+  </p>
+  <p>
+For Lean Body Weight
+  </p>
+  <ul>
+    <li>
+Males: LBW = 50 kg + 2.3 kg for each inch in height over 60 inches.
+    </li>
+    <li>
+Females: LBW = 45.5 kg + 2.3 kg for each inch in height over 60 inches.
+    </li>
+  </ul>
+  <p>
+For less than 60 inches LBW is restricted to
+  </p>
+  <ul>
+    <li>
+Males: LBW = 50 kg
+    </li>
+    <li>
+Females: LBW = 45.5 kg
+    </li>
+  </ul>
+  <p>
+For obese patient LBW would give wrong estimation hence instead of LBW we use OBW = LBW + 0.4(Weight - LBW)
+  </p>
+  <p>
+    <sup>
+** 
+    </sup>
+In the event that patient is underweight and LBW is &gt; than actual weight, actual weight will be entered into the equation.
+  </p>
+  <p>
+    <b>
+Items to be entered: 
+    </b>
+  </p>
+  <ul>
+    <li>
+Gender (Male or Female)
+    </li>
+    <li>
+Age in years
+    </li>
+    <li>
+Serum creatinine in mg/dl
+    </li>
+    <li>
+Height in inches
+    </li>
+    <li>
+Weight in kg
+    </li>
+    <li>
+Is patient obese(Yes or No)
+      <br/>
+      <br/>
+    </li>
+  </ul>
+  <p>
+Note: Height and Weight are used in calculation of LBW. If patient is obese is a yes then we calculate OBW using LBW.
+  </p>
+  <p>
+    <b>
+Interpretation: 
+    </b>
+  </p>
+  <p>
+Determination of dosing interval of Aminoglycoside (once daily dosage) using Aminoglycoside Clearance:
+  </p>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr align="left" valign="top">
+      <th>
+AmCl(ml/min)
+      </th>
+      <th>
+Interval
+      </th>
+      <th>
+Monitoring
+      </th>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+&gt;=60
+      </td>
+      <td>
+Every 24 hours
+      </td>
+      <td>
+Drug level 8-12 hour after dose.
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+40-59
+      </td>
+      <td>
+Every 36 hours
+      </td>
+      <td>
+Nomogram recommended to confirm or modify dosage interval.
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+20-39
+      </td>
+      <td>
+Every 48 hours
+      </td>
+      <td>
+Dosage Levels 1/week during prolonged thearapy.
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+&lt;20
+      </td>
+      <td/>
+      <td>
+Adjusted by monitoring levels
+      </td>
+    </tr>
+  </table>
+  <p>
+Note: For AmCl &gt;=60 ml/min or higher and if duration of therapy is less than 5 days no monitoring is required.
+  </p>
+  <p>
+    <b>
+Reference: 
+    </b>
+  </p>
+  <ol>
+    <li>
+Sarubbi FA Jr, Hull JH. Amikacin serum concentrations: prediction of levels and dosage guidelines. 
+      <i>
+Ann Intern Med
+      </i>
+. 1978 Nov;89:612-8.
+    </li>
+    <li>
+Traynor AM, Nafziger AN, Bertino JS Jr. Aminoglycoside dosing weight correction factors for patients of various body sizes. 
+      <i>
+Antimicrob Agents Chemother
+      </i>
+. 1995 Feb;39(2):545-8.
+    </li>
+    <li>
+Pai MP, Nafziger AN, Bertino JS. Simplified Estimation of Aminoglycoside Pharmacokinetics in Underweight and Obese Adult Patients. 
+      <i>
+Antimicrob Agents Chemother
+      </i>
+. 2011 September; 55(9): 4006-4011.
+    </li>
+  </ol>
+</comment></div>
+</div>
+</body>
+<script>
+var __output__ = "";
+function print(obj) {__output__ += obj; }
+function FPS2SI (input, pre, multi, post) { var out; out = ((input + pre) * multi) + post; return out; };	
+function SI2FPS (input, pre, multi, post) { return input; };	
+function roundOffDC (input) { return input; };	
+function calculate() {
+var gender = $('#gender').val() * 1;
+var Age = $('#Age').val() * 1;
+var SC = $('#SC').val() * 1;
+var SCunit = $('#SCunit').val() * 1;
+var height = $('#height').val() * 1;
+var htunit = $('#htunit').val() * 1;
+var wt = $('#wt').val() * 1;
+var wtunit = $('#wtunit').val() * 1;
+var Obese = $('#Obese').val() * 1;
+
+
+print ("9:|10:|");
+
+var GenderValue;
+
+var LBW;
+
+var OBW;
+
+var AmCL;
+
+
+
+if (SCunit == "&#181;mol/L")
+{
+ SC /= 88.4;
+}
+
+
+if (htunit == "cm")
+{
+ height /= 2.54;
+}
+
+
+if (wtunit == "lbs")
+{
+ wt /= 2.2;
+}
+
+
+if (gender == "Male")
+
+{
+
+ GenderValue = 1;
+
+ LBW = 50 + 2.3 * (height - 60);
+
+} else
+
+{
+
+ GenderValue = 0.85;
+
+ LBW = 45.5 + 2.3 * (height - 60);
+
+}
+
+
+
+if (LBW > wt)
+{
+ LBW = wt;
+}
+
+
+if (Obese == "Yes")
+
+{
+
+ OBW = LBW + 0.4 * (wt - LBW);
+
+ AmCl = (GenderValue) * ( (140 - Age) * OBW / (SC * 72)) ;
+
+} else
+
+{
+
+ AmCl = (GenderValue) * ( (140 - Age) * LBW / (SC * 72)) ;
+
+}
+
+
+
+AmCl = Math.round (AmCl * 10) / 10;
+
+
+
+if (AmCl >= 60)
+
+{
+
+ print ("|10:" + AmCl + " mL/min [Dosing interval every 24 hour. Monitor Drug level 8-12 hours after dose.]");
+
+ print ("|11:" + "Note: For AmCl >=60 mL/min or higher and if duration of therapy is less than 5 days no monitoring is required.");
+
+} else if (AmCl >= 40 && AmCl < 60)
+
+{
+
+ print ("|10:" + AmCl + " mL/min [Dosing interval every 36 hour. Nomogram recommended to confirm or modify dosage interval.]");
+
+} else if (AmCl >= 20 && AmCl < 40)
+
+{
+
+ print ("|10:" + AmCl + " mL/min [Dosing interval every 48 hour. Dosage Levels 1/week during prolonged thearapy.]");
+
+} else if (AmCl < 20)
+
+{
+
+ print ("|10:" + AmCl + " mL/min [Must dose based upon monitoring of level]");
+
+}
+var RESULTS = {};
+RESULTS[10] = 'res';
+RESULTS[11] = 'Null';
+RESULTS[9] = 'TestReadonly';
+var Results =  __output__.split("\|");
+for (x in Results) {
+	var Result = Results[x].split(":");
+	if (RESULTS[Result[0]]) {
+		$("#" + RESULTS[Result[0]]).text(Result[1]);
+	}
+};	
+$("#result").text($result);
+__output__ = '';
+}
+</script>
+<script type="text/javascript" src="../../scripts/jquery.js"></script>
+<script type="text/javascript" src="../../scripts/calculator.js"></script>
+</html>

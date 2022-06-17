@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../Source/calculator.css" />
+<title>Transjugular intrahepatic portosystemic shunt survival</title>
+</head>
+
+<body>
+<div id="title">Transjugular intrahepatic portosystemic shunt survival</div>
+<div id="info"><img width="30px" alt="Info" src="../../scripts/info.png" /></div>
+<table id="input" border="1" cellspacing="0" cellpadding="6px" width="100%">
+<tr  class='FLOAT'>
+	<td class='label'>Serum creatinine (mg/dl)</td>
+	<td width='65%'>
+	<input  type='number'  id='v1' name='v1' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label unit'>unit</td>
+	<td width='65%'>
+	<input  type='hidden'  id='t1' name='t1' value='' />
+	<span  class='choices ' default=''>
+		<span  class='unit' value=0>&#181;mol/L</span>
+		<span  class='unit' value=1>mg/dL</span>
+	</span>
+	</td>
+</tr>
+<tr  class='FLOAT'>
+	<td class='label'>Serum concentrations of bilirubin (mg/dl)</td>
+	<td width='65%'>
+	<input  type='number'  id='v2' name='v2' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label unit'>unit</td>
+	<td width='65%'>
+	<input  type='hidden'  id='t2' name='t2' value='' />
+	<span  class='choices ' default=''>
+		<span  class='unit' value=0>&#181;mol/L</span>
+		<span  class='unit' value=1>mg/dL</span>
+	</span>
+	</td>
+</tr>
+<tr  class='FLOAT'>
+	<td class='label'>International normalized ratio for prothrombin time (INR)</td>
+	<td width='65%'>
+	<input  type='number'  id='v3' name='v3' value='' placeholder='enter...' size='10' />
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Cause of Cirrhosis</td>
+	<td width='65%'>
+	<input  type='hidden'  id='v4' name='v4' value='' />
+	<span  class='choices ' default=''>
+		<span  value=0>Alcohol-related liver disease</span>
+		<span  value=0>Cholestatic liver disease</span>
+		<span  value=1>All other causes</span>
+	</span>
+	</td>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+</table>
+<div id='results'>
+<h5 id='resultsTitle'>R e s u l t s</h5>
+<div class='READONLY'>
+	<span class='label'>---</span><br/>
+<span  class='value' id='l1'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>Risk Score R</span><br/>
+<span  class='value' id='r'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>Survival post TIPS:</span><br/>
+<span  class='value' id='a1'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>1 day:</span><br/>
+<span  class='value' id='a2'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>7 days:</span><br/>
+<span  class='value' id='a3'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>30 days:</span><br/>
+<span  class='value' id='a4'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>90 days:</span><br/>
+<span  class='value' id='a5'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>6 months:</span><br/>
+<span  class='value' id='a6'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>1 years:</span><br/>
+<span  class='value' id='a7'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>2 years:</span><br/>
+<span  class='value' id='a8'>&nbsp;</span>
+</div>
+</div>
+<div id="calculate">Show Results</div>
+<div id="comment">
+<div id="cancel"><img width="24px" alt="Info" src="../../../scripts/cancel.png" /></div>
+<div id="title">Transjugular intrahepatic portosystemic shunt survival</div>
+<div id="commentText"><comment>
+  <p>
+The Transjugular Intrahepatic Portosystemic Shunt (TIPS) procedure is sometime recommended in patients with portal hypertension, especially in those with variceal bleeding or ascites.
+  </p>
+  <p>
+Although TIPS plus medical therapy appears superior to medical therapy alone for ascites; in some studies, it does not appear to improve survival, hospitalization rates or quality of life. A meta-analysis indicates improved transplant-free survival in cirrhotic patients with refractory ascites; however, hepatic encephalopathy was also more common in the TIPS group.
+  </p>
+  <p>
+The outcome, when the TIPS procedure is recommended requires consideration, as some patients may realize worsening hepatic function and decreased survival.
+  </p>
+  <p>
+Malinchoc's 2000 article in Hepatology, based upon 231 patients who underwent elective TIPS (173 for prevention of variceal rebleeding and 58 for refractory ascites), identified items that predict survival in patients undergoing elective TIPS.
+  </p>
+  <p>
+The first item is a risk score R, which when R &gt;1.8 indicates a median survival of 3 months or less. The following items are required to calculate the risk score R.
+  </p>
+  <ul>
+    <li>
+serum bilirubin (S
+      <sub>
+bi
+      </sub>
+) in mg/dL
+    </li>
+    <li>
+serum creatinine (S
+      <sub>
+cr
+      </sub>
+) in mg/dL
+    </li>
+    <li>
+International normalized ratio for prothrombin time (INR)
+    </li>
+    <li>
+The Cause of Cirrhosis (C)
+    </li>
+    <ul>
+      <li>
+C=0 for alcohol-related liver disease or cholestatic liver disease
+      </li>
+      <li>
+C=1 for all other causes of liver disease
+      </li>
+    </ul>
+    <li>
+Days of survival (SD)
+    </li>
+  </ul>
+  <p>
+The formula for the Risk Score (R) is:
+  </p>
+  <ul>
+    <li>
+R = 0.957 * log
+      <sub>
+e
+      </sub>
+(S
+      <sub>
+cr
+      </sub>
+) +0.378*log
+      <sub>
+e
+      </sub>
+(S
+      <sub>
+bi
+      </sub>
+) +1.12*log
+      <sub>
+e
+      </sub>
+(INR) +0.643*C
+    </li>
+  </ul>
+  <p>
+Patients with R &gt;1.8 had median survival of 3 months or less.
+    <br/>
+Patients with R &lt;=1.8 had median survival greater than 3 months.
+  </p>
+  <p>
+After Risk Score is calculated to obtain the Probability Of Survival (POS) for a certain number of days after TIPS, we use the equation:
+  </p>
+  <ul>
+    <li>
+POS = S (t)
+      <sup>
+exp(R-1.127) 
+      </sup>
+    </li>
+    <li>
+where 1.127 = Average patient Risk Score.
+    </li>
+    <li>
+S (t) = Estimated survival probability for an average patient undergoing elective TIPS for days SD.
+    </li>
+  </ul>
+  <p>
+The table below shows the S (t) to be used for its respective number of survival days SD:
+  </p>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr align="left" valign="top">
+      <th>
+SD
+      </th>
+      <th>
+S(t)
+      </th>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+1
+      </td>
+      <td>
+0.99
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+7
+      </td>
+      <td>
+0.966
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+30
+      </td>
+      <td>
+0.86
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+90
+      </td>
+      <td>
+0.707
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+183
+      </td>
+      <td>
+0.621
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+365
+      </td>
+      <td>
+0.551
+      </td>
+    </tr>
+    <tr align="left" valign="top">
+      <td>
+730
+      </td>
+      <td>
+0.428
+      </td>
+    </tr>
+  </table>
+  <p>
+    <sup>
+* 
+    </sup>
+Note: The model is likely to lose its accuracy the longer a patient is followed because other factors such as development of shunt stenosis, or a hepatocellular carcinoma may negatively impact survival.
+  </p>
+  <p>
+    <b>
+References:
+    </b>
+  </p>
+  <ol>
+    <li>
+Malinchoc M, Kamath PS, Gordon FD, et al. A model to predict poor survival in patients undergoing transjugular intrahepatic portosystemic shunts. Hepatology. 2000;31:864-81.
+    </li>
+    <li>
+Saab S, Nieto JM, Lewis SK, et al. TIPS versus paracentesis for cirrhotic patients with refractory ascites. Cochrane Database Syst Rev. 2006 Oct 18;(4):CD0048889.
+    </li>
+    <li>
+Salerno F, Camm&#224; C, Enea M, et al. Transjugular intrahepatic portosystemic shunt for refractory ascites: a meta-analysis of individual patient data. Gastroenterology. 2007 Sep;133(3):825-34.
+    </li>
+    <li>
+Sanyal AJ, Camm&#224; C, Enea M, et al. North American Study for the Treatment of Refractory Ascites Group. Gastroenterology. 2003 Mar;124(3):634-41.
+    </li>
+  </ol>
+</comment></div>
+</div>
+</body>
+<script>
+var __output__ = "";
+function print(obj) {__output__ += obj; }
+function FPS2SI (input, pre, multi, post) { var out; out = ((input + pre) * multi) + post; return out; };	
+function SI2FPS (input, pre, multi, post) { return input; };	
+function roundOffDC (input) { return input; };	
+function calculate() {
+var v1 = $('#v1').val() * 1;
+var t1 = $('#t1').val() * 1;
+var v2 = $('#v2').val() * 1;
+var t2 = $('#t2').val() * 1;
+var v3 = $('#v3').val() * 1;
+var v4 = $('#v4').val() * 1;
+
+print("6:|7:|8:|9:|10:|11:|12:|13:|14:|15:|");var r;var diff;var pos1;var pos2;var pos3;var pos4;var pos5;var pos6;var pos7;if (t1==0){ v1=v1/88.4;}if (t2==0){ v2=v2/17.1;}r = (0.957 * Math.log(v1))+(0.378*Math.log(v2))+(1.12*Math.log(v3))+0.643*v4; r=Math.round(r*1000)/1000;print("|7:" + r);diff=r-1.127;pos1=Math.pow(0.990,Math.exp(diff))*100;pos1=Math.round(pos1*100)/100;pos2=Math.pow(0.966,Math.exp(diff))*100;pos2=Math.round(pos2*100)/100;pos3=Math.pow(0.860,Math.exp(diff))*100;pos3=Math.round(pos3*100)/100;pos4=Math.pow(0.707,Math.exp(diff))*100;pos4=Math.round(pos4*100)/100;pos5=Math.pow(0.621,Math.exp(diff))*100;pos5=Math.round(pos5*100)/100;pos6=Math.pow(0.551,Math.exp(diff))*100;pos6=Math.round(pos6*100)/100;pos7=Math.pow(0.428,Math.exp(diff))*100;pos7=Math.round(pos7*100)/100;print("|9:" + pos1 + "%");print("|10:" + pos2 + "%");print("|11:" + pos3 + "%");print("|12:" + pos4 + "%");print("|13:" + pos5 + "%");print("|14:" + pos6 + "%");print("|15:" + pos7 + "%");
+var RESULTS = {};
+RESULTS[10] = 'a3';
+RESULTS[11] = 'a4';
+RESULTS[12] = 'a5';
+RESULTS[13] = 'a6';
+RESULTS[14] = 'a7';
+RESULTS[15] = 'a8';
+RESULTS[6] = 'l1';
+RESULTS[7] = 'r';
+RESULTS[8] = 'a1';
+RESULTS[9] = 'a2';
+var Results =  __output__.split("\|");
+for (x in Results) {
+	var Result = Results[x].split(":");
+	if (RESULTS[Result[0]]) {
+		$("#" + RESULTS[Result[0]]).text(Result[1]);
+	}
+};	
+$("#result").text($result);
+__output__ = '';
+}
+</script>
+<script type="text/javascript" src="../../scripts/jquery.js"></script>
+<script type="text/javascript" src="../../scripts/calculator.js"></script>
+</html>

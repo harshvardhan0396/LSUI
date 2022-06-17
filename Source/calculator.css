@@ -1,0 +1,306 @@
+/* Last Changes on May 17, 2016 */
+
+* {
+	font-family: 'Avenir Next', 'AvenirNextCondensed-Regular', 'HelveticaNeue-Light', 'AvenirNext', 'AvenirNextCondensed-Regular', 'HelveticaNeue',  'droid sans';
+}
+
+body {
+	margin: 0px;
+	color: rgb(100, 100, 100);
+	line-height: 150%;
+	background-color: RGB(255, 255, 255);
+	font-size: 100%;
+	width: 100%;
+}
+
+#title {
+	margin: 0;
+	padding: 12px 36px 12px 16px;
+	letter-spacing: 0.02em;
+	color: rgba(162, 0, 0,1);
+	background-color: rgba(255,255,255,.9);
+	font-size: 120%;
+	font-weight: 200;
+	font-family: 'AvenirNextCondensed-Regular';
+}
+
+#input {
+	margin-top: 8px;
+	border: 0;
+	padding: 5px 10px;
+	z-index: 0;
+	border-bottom: 0px solid rgba(85, 85, 85,0.5);
+}
+
+#cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color:  rgba(0, 0, 0, 0.6);
+	z-index: +10;
+	display: none;
+}
+
+
+td {
+	border: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 0.5px solid rgba(230, 230, 230,1);
+}
+
+td.label {
+	text-align: right;
+    font-weight: inherit;
+	font-size: 95%;
+	color: rgba(128,128,128,1);
+	
+}
+.label {
+	font-weight: 200;
+	font-size: 80%;
+}
+
+.label.unit {
+	text-align: right;
+	font-size: 70%;
+	xfont-weight: 100;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(30, 30, 30, 0.2);
+    font-size: 80%;
+    vertical-align: middle;
+}
+
+input {
+	-webkit-appearance:none;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 0px solid rgba(230, 230, 230, .1);
+	border-bottom: 2px solid rgba(230, 230, 230, .6);
+	padding: 2px 10px;
+	font-size: 120%;
+	border-radius: 0;
+}
+
+input.selected {
+	background: rgba(230, 230, 230, .6);
+	color: rgb(80,80,80);
+	font-size: 120%;
+}
+
+input:focus {
+	color: rgba(61, 211, 231, 1);
+	font-size: 120%;
+	background: rgb(80,80,80);
+	border-bottom: 2px solid rgba(61, 211, 231, 1);
+}
+
+.choices span.unit {
+	text-align: center;
+}
+
+.CHOICE .choices span {
+	-webkit-appearance:none;
+	margin: 2px 2px;
+	padding: 2px 8px;
+	border: 2px solid rgba(230, 230, 230, .6);
+	border-bottom: 2px solid rgba(230, 230, 230, .6);
+	border-left: 2px solid rgba(230, 230, 230, .6);
+	border-radius: 0;
+	float: left;
+	font-size: 90%;
+	min-width: 30px;
+	xxcolor: rgb(230, 230, 230);
+}
+
+.CHOICE .selected {
+	background: rgb(80,80,80);
+	color: rgba(61, 211, 231, 1);
+	font-size: 90%;
+	/*font-size: 120%;	*/
+	
+}
+
+.mchoice {
+	padding: 2px 10px 4px 10px;
+	font-size: 90%;
+}
+
+.MCHOICE .checkbox {
+	margin-right: 4px;
+	font-size: 120%;
+	vertical-align: middle;
+}
+
+.MCHOICE .selected {
+	font-size: 90%;
+	background: rgb(80,80,80);
+	color: rgba(61, 211, 231, 1);
+	
+}
+
+
+
+
+#calculate {
+	padding: 20px 6px;
+	margin-top: 20px;
+	color: rgba(230, 230, 230,1);
+	background-color: rgba(203,0,51,.9);
+		background-color: white;
+		color: rgba(203,0,51,.9);
+	text-align: center;
+	font-size: 150%;
+	font-weight: 200;
+	display: none;
+}
+
+#results {
+	width: 100%;
+	background: rgba(210, 232, 230,1);
+	max-height: 40%;
+	overflow-y: scroll;
+}
+
+
+#resultsTitle {
+	text-align: center;
+	margin: 4px;
+	display: none;
+}
+
+.READONLY, .RESULT {
+	padding: 12px 0;
+	background-color: rgba(230, 230, 230,.1);
+	padding-left: 16px;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.RESULT .label, .READONLY .label {
+	font-size: 1.6em;
+	/* color: rgba(255,255,255,255); */
+	color: rgba(203,0,51,.7);
+    font-weight: inherit;
+	
+}
+
+.RESULT .value, .READONLY .value {
+	color: #024B8B;
+	font-weight: inherit;
+}
+
+.noResult {
+	color: white;
+}
+
+
+
+.MCselected {
+	color: rgba(230, 230, 230,0.2);
+}
+
+.notSelected,  .notSelected span {
+	border: 1px dotted white;
+}
+
+#comment {
+	xpadding: 2px 10px;
+	position: fixed;
+	top: 100%;
+	xmargin: 10px;
+	xborder: 1px solid rgba(230, 230, 230,0.5);
+	border-radius: 8px;
+	display: none;
+	
+	width: 90%;
+	height: 80%;
+	margin-left: 5%;
+	overflow-y: scroll;
+	font-size: 90%;
+	x-webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 10px 4px 0px;
+	xbox-shadow: rgba(0, 0, 0, 0.2) 2px 10px 4px 0px;		
+	z-index: +100;
+}
+
+#comment2 {
+	position: fixed;
+	top: 100%;
+	display: none;
+	
+	width: 90%;
+	height: 20px;
+	margin-left: 5%;
+	x-webkit-box-shadow: 10px -16px 10px 10px rgba(255,255,255, 0.4) ;		
+	xbox-shadow: 10px -16px 10px 0px rgba(255,255,255, 0.4) ;		
+	z-index: +50;
+}
+
+
+#comment #title {
+	border-top: 1px solid rgba(203,0,51);
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	font-size: 90%;
+	padding: 10px 20px;
+}
+
+#comment #commentText {
+	padding: 10px 20px;
+	background-color: white;
+	color: rgba(69,69,69,1);
+}
+
+.popup {
+	position: fixed;
+	top: 10%;
+	right: 5%;
+	width: 90%;
+	max-height: 80%;
+	padding: 20px;
+	border: 1px solid rgba(230, 230, 230,0.2);
+	border-radius: 15px;
+	background-color: white;
+}
+
+#info {
+	position: fixed;
+	top: 8px;
+	right: 8px;
+}
+
+#cancel {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+#url {
+	position: fixed;
+	bottom: 4px;
+	right: 4px;
+	margin: 0;
+	xfont-family: 'AvenirNextCondensed-UltraLight' ;	
+	color: yellow;
+	font-size: 120%;
+	font-weight: 100;
+	margin: 0 4px;
+}
+
+.note {
+	text-align: left;
+	padding: 6px;
+	font-size: 90%;
+	color: rgba(61,96,101,1);
+	border: 0px solid rgba(230, 230, 230,0.1);
+	background-color: rgba(240, 240, 240, 0.4);
+	xtext-decoration: underline;
+}
+
+.noInput {
+	font-size: 70%;
+	color: grey;
+}

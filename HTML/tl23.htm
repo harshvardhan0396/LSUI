@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../Source/calculator.css" />
+<title>Migraine with Aura Criteria</title>
+</head>
+
+<body>
+<div id="title">Migraine with Aura Criteria</div>
+<div id="info"><img width="30px" alt="Info" src="../../scripts/info.png" /></div>
+<table id="input" border="1" cellspacing="0" cellpadding="6px" width="100%">
+<tr  class='READONLY'>
+	<td class='note' colspan='2'>~Select which apply (Must have had at least 2 attacks with the feature listed to select it)</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>One or more fully reversible aura symptom indicating focal cerebral cortical and/or brain stem functions</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q1' name='q1' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>At least one aura symptom develops gradually over more than four minutes, or two or more symptoms occur in succession</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q2' name='q2' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>No aura symptom lasts more than 60 minutes; if more than one aura symptom is present, accepted duration is proportionally increased</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q3' name='q3' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Headache follows aura with free interval of at least 60 minutes (it may also simultaneously begin with the aura)</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q4' name='q4' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='READONLY'>
+	<td class='note' colspan='2'>~Select which of the following aura features have occurred</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Homonymous visual disturbance</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q5' name='q5' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Unilateral paresthesias and/or numbness</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q6' name='q6' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Unilateral weakness</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q7' name='q7' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='CHOICE'>
+	<td class='label'>Aphasia or unclassifiable speech difficulty</td>
+	<td width='65%'>
+	<input  type='hidden'  id='q8' name='q8' value='' />
+	<span  class='choices ' default=''>
+		<span  value=1>Yes</span>
+		<span  value=0>No</span>
+	</span>
+	</td>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+<tr  class='READONLY'>
+</tr>
+</table>
+<div id='results'>
+<h5 id='resultsTitle'>R e s u l t s</h5>
+<div class='READONLY'>
+	<span class='label'>~Select which apply (Must have had at least 2 attacks with the feature listed to select it)</span><br/>
+<span  class='value' id='c1'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>~Select which of the following aura features have occurred</span><br/>
+<span  class='value' id='c2'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>---</span><br/>
+<span  class='value' id='l1'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>Output</span><br/>
+<span  class='value' id='result'>&nbsp;</span>
+</div>
+<div class='READONLY'>
+	<span class='label'>------</span><br/>
+<span  class='value' id='line'>&nbsp;</span>
+</div>
+</div>
+<div id="calculate">Show Results</div>
+<div id="comment">
+<div id="cancel"><img width="24px" alt="Info" src="../../../scripts/cancel.png" /></div>
+<div id="title">Migraine with Aura Criteria</div>
+<div id="commentText"><comment>
+  <p>
+These criteria are that of the International Headache Society, published in 1988.
+  </p>
+  <p>
+    <b>
+Migraine with Aura Diagnostic Criteria
+    </b>
+  </p>
+  <p>
+#1 At least two attacks with at least three of the following:
+  </p>
+  <ul>
+    <li>
+One or more fully reversible aura symptom indicating focal cerebral cortical and/or brain stem functions
+    </li>
+    <li>
+At least one aura symptom develops gradually over more than four minutes, or two or more symptoms occur in succession
+    </li>
+    <li>
+No aura symptom lasts more than 60 minutes; if more than one aura symptom is present, accepted duration is proportionally increased
+    </li>
+    <li>
+Headache follows aura with free interval of at least 60 minutes (it may also simultaneously begin with the aura
+    </li>
+  </ul>
+  <p>
+#2 At least one of the following aura features must be present to diagnose migraine with typical aura:
+  </p>
+  <ul>
+    <li>
+Homonymous visual disturbance
+    </li>
+    <li>
+Unilateral paresthesias and/or numbness
+    </li>
+    <li>
+Unilateral weakness
+    </li>
+    <li>
+Aphasia or unclassifiable speech difficulty
+    </li>
+  </ul>
+  <p>
+    <b>
+Reference:
+    </b>
+  </p>
+  <ul>
+    <li>
+Headache classification committee of the International Headache Society. Classification and diagnostic criteria for headache disorders, cranial neuralgias and facial pain. Cephalalgia. 1988;8 Suppl 7:1-96.
+    </li>
+  </ul>
+</comment></div>
+</div>
+</body>
+<script>
+var __output__ = "";
+function print(obj) {__output__ += obj; }
+function FPS2SI (input, pre, multi, post) { var out; out = ((input + pre) * multi) + post; return out; };	
+function SI2FPS (input, pre, multi, post) { return input; };	
+function roundOffDC (input) { return input; };	
+function calculate() {
+var q1 = $('#q1').val() * 1;
+var q2 = $('#q2').val() * 1;
+var q3 = $('#q3').val() * 1;
+var q4 = $('#q4').val() * 1;
+var q5 = $('#q5').val() * 1;
+var q6 = $('#q6').val() * 1;
+var q7 = $('#q7').val() * 1;
+var q8 = $('#q8').val() * 1;
+
+var sum1 =q1+q2+q3+q4;var sum2 =q5+q6+q7+q8;if (sum1 >=3 && sum2 >=1){print ("|11:" + "Patient meets IHS Criteria for Migraine with Aura");}else{print ("|11:" + "Patient does not meet IHS Criteria for Migraine with Aura");}
+var RESULTS = {};
+RESULTS[10] = 'l1';
+RESULTS[11] = 'result';
+RESULTS[12] = 'line';
+RESULTS[8] = 'c1';
+RESULTS[9] = 'c2';
+var Results =  __output__.split("\|");
+for (x in Results) {
+	var Result = Results[x].split(":");
+	if (RESULTS[Result[0]]) {
+		$("#" + RESULTS[Result[0]]).text(Result[1]);
+	}
+};	
+$("#result").text($result);
+__output__ = '';
+}
+</script>
+<script type="text/javascript" src="../../scripts/jquery.js"></script>
+<script type="text/javascript" src="../../scripts/calculator.js"></script>
+</html>
